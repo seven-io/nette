@@ -1,0 +1,72 @@
+{
+  "name": "seven/nette",
+  "description": "Partially featured seven.io HTTP client for nette",
+  "keywords": [
+    "nette",
+    "seven",
+    "sms"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/seven-io/nette",
+  "authors": [
+    {
+      "email": "support@seven.io",
+      "homepage": "https://www.seven.io",
+      "name": "sms77 e.K."
+    }
+  ],
+  "require": {
+    "php": ">= 7.2",
+    "ext-json": "*",
+    "guzzlehttp/psr7": "^1.4|^2.0",
+    "nette/utils": "^3.1.0"
+  },
+  "require-dev": {
+    "nette/di": "^3.0.1",
+    "nette/tester": "~2.3.1",
+    "contributte/guzzlette": "^3.0.0",
+    "ninjify/qa": "^0.12.0",
+    "ninjify/nunjuck": "^0.3.0",
+    "mockery/mockery": "^1.3.0",
+    "phpstan/phpstan": "^1.0",
+    "phpstan/phpstan-deprecation-rules": "^1.0",
+    "phpstan/phpstan-nette": "^1.0",
+    "phpstan/phpstan-strict-rules": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Seven\\Nette\\": "src"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "qa": [
+      "linter src tests",
+      "codesniffer src tests"
+    ],
+    "tests": [
+      "tester -s -p php --colors 1 -C tests/cases"
+    ],
+    "coverage": [
+      "tester -s -p phpdbg --colors 1 -C --coverage ./coverage.xml --coverage-src ./src tests/cases"
+    ],
+    "phpstan": [
+      "vendor/bin/phpstan analyse -l max -c phpstan.neon src"
+    ]
+  },
+  "suggest": {
+    "contributte/guzzlette": "As the default HTTP client"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

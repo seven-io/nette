@@ -1,5 +1,5 @@
 {
-  "name": "seven/nette",
+  "name": "seven.io/nette",
   "description": "Partially featured seven.io HTTP client for nette",
   "keywords": [
     "nette",
@@ -13,7 +13,7 @@
     {
       "email": "support@seven.io",
       "homepage": "https://www.seven.io",
-      "name": "sms77 e.K."
+      "name": "seven communications GmbH & Co. KG"
     }
   ],
   "require": {

@@ -10,7 +10,7 @@ use Seven\Nette\Http\IHttpClient;
 
 abstract class AbstractClient {
 
-	protected const BASE_URL = 'https://gateway.sms77.io/api/';
+	protected const BASE_URL = 'https://gateway.seven.io/api/';
 
 	/** @var Config */
 	private $config;

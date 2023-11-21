@@ -13,8 +13,6 @@ class SmsClient extends AbstractClient {
 	}
 
 	public function test(SmsMessage $message): object {
-		$message->setDebug(true);
-
 		return $this->send($message);
 	}
 

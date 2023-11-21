@@ -13,8 +13,6 @@ class VoiceClient extends AbstractClient {
 	}
 
 	public function test(VoiceMessage $message): object {
-		$message->setDebug(true);
-
 		return $this->send($message);
 	}
 

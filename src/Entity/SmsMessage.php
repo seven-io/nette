@@ -7,9 +7,6 @@ use DateTimeInterface;
 
 class SmsMessage {
 
-	/** @var bool */
-	protected $debug = false;
-
 	/** @var DateTimeImmutable|null */
 	protected $delay;
 
@@ -51,14 +48,6 @@ class SmsMessage {
 	 */
 	public function getRecipients(): array {
 		return $this->recipients;
-	}
-
-	public function getDebug(): bool {
-		return $this->debug;
-	}
-
-	public function setDebug(bool $debug): void {
-		$this->debug = $debug;
 	}
 
 	public function getDelay(): ?DateTimeImmutable {
@@ -126,10 +115,6 @@ class SmsMessage {
 			'text' => $this->message,
 			'to' => implode(',', $this->recipients),
 		];
-
-		if ($this->debug) {
-			$arr['debug'] = 1;
-		}
 
 		if ($this->delay !== null) {
 			$arr['delay'] = date('Y-m-d H:i:s',

@@ -4,9 +4,6 @@ namespace Seven\Nette\Entity;
 
 class VoiceMessage {
 
-	/** @var bool $debug */
-	protected $debug = false;
-
 	/** @var string|null */
 	protected $from;
 
@@ -30,14 +27,6 @@ class VoiceMessage {
 
 	public function getRecipient(): string {
 		return $this->recipient;
-	}
-
-	public function getDebug(): bool {
-		return $this->debug;
-	}
-
-	public function setDebug(bool $debug): void {
-		$this->debug = $debug;
 	}
 
 	public function getXml(): bool {
@@ -65,8 +54,6 @@ class VoiceMessage {
 			'text' => $this->message,
 			'to' => $this->recipient,
 		];
-
-		if ($this->debug) $arr['debug'] = 1;
 
 		if ($this->xml) $arr['xml'] = 1;
 
